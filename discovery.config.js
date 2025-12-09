@@ -1,22 +1,23 @@
+
 module.exports = {
   seo: {
-    title: "FastStore",
-    description: "A fast and performant store framework",
-    titleTemplate: "%s | FastStore",
-    author: "FastStore",
-  },
+  "title": "FastStore",
+  "description": "A fast and performant store framework",
+  "titleTemplate": "%s | FastStore",
+  "author": "FastStore"
+},
 
   // Theming
-  theme: "custom-theme",
+  theme: 'custom-theme',
 
   // Ecommerce Platform
-  platform: "vtex",
+  platform: 'vtex',
 
   // Platform specific configs for API
   api: {
-    storeId: "newstore",
-    workspace: "master",
-    environment: "vtexcommercestable",
+    storeId: process.env.NEXT_PUBLIC_STORE_ID || "chanelglobaldemo",
+    workspace: 'master',
+    environment: 'vtexcommercestable',
     hideUnavailableItems: true,
     incrementAddress: false,
   },
@@ -24,12 +25,12 @@ module.exports = {
   // Default session
   session: {
     currency: {
-      code: "BRL",
-      symbol: "R$",
+      code: "AED",
+      symbol: "د.إ.‏",
     },
-    locale: "pt-BR",
-    channel: '{"salesChannel":"1","regionId":""}',
-    country: "BRA",
+    locale: "ar-AE",
+    channel: '{"salesChannel":1,"regionId":""}',
+    country: "ARE",
     deliveryMode: null,
     addressType: null,
     postalCode: null,
@@ -38,61 +39,61 @@ module.exports = {
   },
 
   cart: {
-    id: "",
+    id: '',
     items: [],
     messages: [],
     shouldSplitItem: true,
   },
 
   // Production URLs
-  storeUrl: "https://www.fast.store",
-  secureSubdomain: "https://www.fast.store/",
-  checkoutUrl: "https://www.fast.store/checkout",
-  loginUrl: "https://www.fast.store/api/io/login",
-  accountUrl: "https://www.fast.store/api/io/account",
+  storeUrl: "https://chanelglobaldemo.vtex.app",
+  secureSubdomain: "https://secure.vtexfaststore.com/",
+  checkoutUrl: "https://secure.vtexfaststore.com/checkout",
+  loginUrl: "https://secure.vtexfaststore.com/api/io/login",
+  accountUrl: "https://secure.vtexfaststore.com/api/io/account",
 
   previewRedirects: {
-    home: "/",
-    plp: "/headphones",
-    search: "/s?q=Newstore",
-    pdp: "/headphone-white-10000006/p",
+    home: '/',
+    plp: "/%D8%A7%D9%84%D8%B9%D8%B7%D8%B1",
+    search: "/s?q=Chanel",
+    pdp: "/platinum-egoiste-after-shave-lotion/p",
   },
 
   // Lighthouse CI
   lighthouse: {
-    server: process.env.BASE_SITE_URL || "http://localhost:3000",
+    server: process.env.BASE_SITE_URL || 'http://localhost:3000',
     pages: {
-      home: "/",
-      pdp: "/headphone-white-10000006/p",
-      collection: "/headphones",
+      home: '/',
+      pdp: "/platinum-egoiste-after-shave-lotion/p",
+      collection: "/%D8%A7%D9%84%D8%B9%D8%B7%D8%B1",
     },
   },
 
   // E2E CI
   cypress: {
     pages: {
-      home: "/",
-      pdp: "/headphone-white-10000006/p",
-      collection: "/headphones",
-      collection_filtered:
-        "/headphones?category-1=headphones&fuzzy=0&operator=and&facets=category-1%2Cfuzzy%2Coperator&sort=score_desc&page=0",
-      search: "/s?q=Newstore",
+      home: '/',
+      pdp: "/platinum-egoiste-after-shave-lotion/p",
+      collection: "/%D8%A7%D9%84%D8%B9%D8%B7%D8%B1",
+      collection_filtered: "/%D8%A7%D9%84%D8%B9%D8%B7%D8%B1/?category-1=%D8%A7%D9%84%D8%B9%D8%B7%D8%B1&brand=Chanel&facets=category-1%2Cbrand%27",
+      search: "/s?q=Chanel",
     },
-    browser: "electron",
+    browser: 'electron',
   },
 
   analytics: {
     // https://developers.google.com/tag-platform/tag-manager/web#standard_web_page_installation,
-    gtmContainerId: "GTM-1234567",
+    gtmContainerId: "",
   },
 
   experimental: {
     nodeVersion: 18,
     cypressVersion: 12,
-    enableFaststoreMyAccount: false,
   },
 
   vtexHeadlessCms: {
-    webhookUrls: ["https://newstore.myvtex.com/cms-releases/webhook-releases"],
+    webhookUrls: [
+      "https://chanelglobaldemo.myvtex.com/cms-releases/webhook-releases",
+    ],
   },
-};
+}
