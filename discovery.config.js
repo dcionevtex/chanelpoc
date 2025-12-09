@@ -1,5 +1,6 @@
 
 module.exports = {
+  direction: 'rtl',
   seo: {
   "title": "FastStore",
   "description": "A fast and performant store framework",
@@ -48,7 +49,7 @@ module.exports = {
   // Production URLs
   storeUrl: "https://chanelglobaldemo.vtex.app",
   secureSubdomain: "https://secure.vtexfaststore.com/",
-  checkoutUrl: "https://secure.vtexfaststore.com/checkout",
+  checkoutUrl: "https://chanelglobaldemo.myvtex.com/checkout",
   loginUrl: "https://secure.vtexfaststore.com/api/io/login",
   accountUrl: "https://secure.vtexfaststore.com/api/io/account",
 
