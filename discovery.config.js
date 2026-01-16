@@ -48,10 +48,10 @@ module.exports = {
 
   // Production URLs
   storeUrl: "https://chanelglobaldemo.vtex.app",
-  secureSubdomain: "https://secure.vtexfaststore.com/",
+  secureSubdomain: "https://chanelglobaldemo.vtexfaststore.com/",
   checkoutUrl: "https://chanelglobaldemo.myvtex.com/checkout",
-  loginUrl: "https://secure.vtexfaststore.com/api/io/login",
-  accountUrl: "https://secure.vtexfaststore.com/api/io/account",
+  loginUrl: "https://chanelglobaldemo.vtexfaststore.com/api/io/login",
+  accountUrl: "https://chanelglobaldemo.vtexfaststore.com/api/io/account",
 
   previewRedirects: {
     home: '/',
