@@ -114,11 +114,88 @@
       --fs-qty-selector-border-radius                   : var(--fs-border-radius-pill);
     }
 
+    [data-fs-navbar-links]{
+      background-color: transparent;
+      // background-color: red;
+      // z-index: -1;
+    }
+
+     [data-fs-navbar-links-wrapper]{
+      // background-color: #0366dd;
+      // position: relative;
+      // display: none;
+      background-color: transparent;
+      // z-index: -1;
+    }
+    
     [data-fs-navbar-header] {
       [data-fs-button-wrapper], [data-fs-button-icon] {
         color: var(--fs-color-text-display);
       }
     }
+
+    [data-fs-customnavbar-links] {
+      position: relative;
+      width: 100%;
+      box-shadow: var(--fs-navbar-box-shadow);
+      
+      [data-fs-customnavbar-linklist]{
+        display: flex;
+      position: absolute;
+      flex-direction: row;
+      background-color: transparent;      
+      // width: 100%;
+      margin-top: -52px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      max-width: calc(var(--fs-grid-max-width) - (256px + 16px));
+      width: 100%;
+        // background-color: red;
+
+      
+      [data-fs-customnavbar-linklist-item] {
+        position: relative;
+        padding: 16px;
+        
+      }         
+    }
+
+      [data-fs-customnavbar-linklist-submenu] {
+        background-color: var(--fs-color-neutral-0);
+        position: fixed;
+        top: auto;
+        margin-top: -4px;
+        left: 0;
+        width: 100vw;
+        padding: 16px;
+        z-index: 10;
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+        color: var(--fs-link-display-text-color);
+
+        li {
+          padding: 4px 16px;
+          color: var(--fs-color-text);
+        }
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      a:link {
+        color: var(--fs-link-display-text-color);
+      }
+  
+      a:visited {
+        color: var(--fs-link-display-text-color);
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }   
+    
 
     [data-fs-carousel] {
       --fs-carousel-controls-box-shadow                 : none;
