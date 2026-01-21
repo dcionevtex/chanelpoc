@@ -34,7 +34,7 @@ export interface LinkItem {
     url: string;
 }
 
-const HEADER_SCROLL_THRESHOLD = 100;
+const HEADER_SCROLL_THRESHOLD = 64;
 
 export default function HeaderMenu({ ...props }: HeaderMenuProps) {
     const [isVisible, setIsVisible] = useState(true);
