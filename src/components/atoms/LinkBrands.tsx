@@ -10,10 +10,27 @@ export default function LinkBrands({ brands }: { brands: Brand[] }) {
                     <Link
                         variant="display"
                         href={brand.url}
-                        style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+                        style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            gap: "4px",
+                        }}
                     >
-                        <Image src={brand.image} alt={brand.name} width={100} height={100} />
-                        {brand.name}
+                        <Image
+                            src={brand.image}
+                            alt={brand.name}
+                            width={100}
+                            height={100}
+                            style={{
+                                objectFit: "contain",
+                                border: "1px solid #000",
+                                aspectRatio: "4/3",
+                                width: "50px",
+                                height: "auto",
+                            }}
+                        />
+                        <p style={{ fontSize: 12 }}>{brand.name}</p>
                     </Link>
                 </div>
             ))}

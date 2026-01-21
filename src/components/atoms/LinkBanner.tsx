@@ -15,7 +15,7 @@ export default function LinkBanner({ image, url }: Banner) {
                     width: "auto",
                     objectFit: "cover",
                     aspectRatio: "4/5",
-                    borderRadius: "8px",
+                    borderRadius: "6px",
                 }}
             />
         </Link>

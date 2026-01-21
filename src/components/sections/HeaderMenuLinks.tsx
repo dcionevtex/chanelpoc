@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { CustomNavbarLinks } from "../molecules/CustomNavbarLinks";
 
 export interface HeaderMenuProps {
@@ -28,7 +29,26 @@ export interface SubItem {
     url: string;
 }
 
+const HEADER_SCROLL_THRESHOLD = 100;
+
 export default function HeaderMenu({ ...props }: HeaderMenuProps) {
+    const [isVisible, setIsVisible] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            setIsVisible(scrollY < HEADER_SCROLL_THRESHOLD);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    if (!isVisible) return null;
+
     return (
         <section className="section">
             <CustomNavbarLinks pageLinks={props.pageLinks} />

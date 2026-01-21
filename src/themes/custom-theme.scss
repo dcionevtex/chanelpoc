@@ -116,16 +116,10 @@
 
     [data-fs-navbar-links]{
       background-color: transparent;
-      // background-color: red;
-      // z-index: -1;
     }
 
      [data-fs-navbar-links-wrapper]{
-      // background-color: #0366dd;
-      // position: relative;
-      // display: none;
       background-color: transparent;
-      // z-index: -1;
     }
     
     [data-fs-navbar-header] {
@@ -141,25 +135,25 @@
       
       [data-fs-customnavbar-linklist]{
         display: flex;
-      position: absolute;
-      flex-direction: row;
-      background-color: transparent;      
-      // width: 100%;
-      margin-top: -52px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1000;
-      max-width: calc(var(--fs-grid-max-width) - (256px + 16px));
-      width: 100%;
-        // background-color: red;
-
-      
-      [data-fs-customnavbar-linklist-item] {
-        position: relative;
-        padding: 16px;
+        position: absolute;
+        flex-direction: row;
+        background-color: transparent;
+        margin-top: -52px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        max-width: calc(var(--fs-grid-max-width) - (256px + 64px));
+        width: 100%;
         
-      }         
-    }
+        [data-fs-customnavbar-linklist-item] {
+          position: relative;
+          padding: 16px;
+        }           
+        
+        @include media("<=notebook") {
+          max-width: calc(var(--fs-grid-max-width) - (512px));
+        }
+      }
 
       [data-fs-customnavbar-linklist-submenu] {
         background-color: var(--fs-color-neutral-0);
@@ -193,6 +187,10 @@
 
       a:hover {
         text-decoration: underline;
+      }
+
+      @include media("<notebook") {
+        display: none;
       }
     }   
     

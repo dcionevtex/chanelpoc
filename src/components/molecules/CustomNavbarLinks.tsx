@@ -44,7 +44,7 @@ export function CustomNavbarLinks({ pageLinks }: HeaderMenuProps) {
                     >
                         <ul>
                             {activeLink.subitems.map((child) => (
-                                <li key={child.text}>
+                                <li key={child.text} style={{fontSize: 14}}>
                                     <Link href={child.url}>{child.text}</Link>
                                 </li>
                             ))}
