@@ -389,19 +389,35 @@
                             "subitems": {
                                 "title": "Submenu links",
                                 "type": "array",
-                                "maxItems": 32,
+                                "maxItems": 4,
                                 "items": {
                                     "title": "Sub link",
                                     "type": "object",
-                                    "required": ["text", "url"],
+                                    "required": ["groupTitle"],
                                     "properties": {
-                                        "text": {
-                                            "title": "Link Text",
+                                        "groupTitle": {
+                                            "title": "Group Title",
                                             "type": "string"
                                         },
-                                        "url": {
+                                        "links": {
                                             "title": "Link URL",
-                                            "type": "string"
+                                            "type": "array",
+                                            "maxItems": 8,
+                                            "items": {
+                                                "title": "Sub link",
+                                                "type": "object",
+                                                "required": ["text", "url"],
+                                                "properties": {
+                                                    "text": {
+                                                        "title": "Link Text",
+                                                        "type": "string"
+                                                    },
+                                                    "url": {
+                                                        "title": "Link URL",
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }

@@ -25,6 +25,11 @@ export interface Brand {
 }
 
 export interface SubItem {
+    groupTitle: string;
+    links: LinkItem[];
+}
+
+export interface LinkItem {
     text: string;
     url: string;
 }
