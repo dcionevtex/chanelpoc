@@ -4,33 +4,18 @@ import Image from "next/image";
 
 export default function LinkBrands({ brands }: { brands: Brand[] }) {
     return (
-        <div style={{ display: "flex", flexDirection: "row", gap: "32px" }}>
+        <div data-fs-customnavbar-brands data-fs-customnavbar-brands-container>
             {brands.map((brand) => (
-                <div key={brand.name}>
-                    <Link
-                        variant="display"
-                        href={brand.url}
-                        style={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            gap: "4px",
-                        }}
-                    >
+                <div key={brand.name} data-fs-customnavbar-brand-item>
+                    <Link variant="display" href={brand.url} data-fs-customnavbar-brand-link>
                         <Image
                             src={brand.image}
                             alt={brand.name}
                             width={100}
                             height={100}
-                            style={{
-                                objectFit: "contain",
-                                border: "1px solid #000",
-                                aspectRatio: "4/3",
-                                width: "50px",
-                                height: "auto",
-                            }}
+                            data-fs-customnavbar-brand-image
                         />
-                        <p style={{ fontSize: 12 }}>{brand.name}</p>
+                        <p data-fs-customnavbar-brand-name>{brand.name}</p>
                     </Link>
                 </div>
             ))}

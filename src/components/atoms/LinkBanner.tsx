@@ -4,19 +4,13 @@ import { Banner } from "../sections/HeaderMenuLinks";
 
 export default function LinkBanner({ image, url }: Banner) {
     return (
-        <Link variant="display" href={url}>
+        <Link variant="display" href={url} data-fs-customnavbar-banner-link>
             <Image
                 src={image}
-                alt=""
+                alt="Link Banner"
                 width={400}
                 height={400}
-                style={{
-                    height: "500",
-                    width: "auto",
-                    objectFit: "cover",
-                    aspectRatio: "4/5",
-                    borderRadius: "6px",
-                }}
+                data-fs-customnavbar-banner-image
             />
         </Link>
     );
