@@ -2,6 +2,7 @@
 // @import "@faststore/ui/src/components/atoms/Alert/styles.scss";
 @import "@faststore/ui/src/components/atoms/Loader/styles.scss";
 
+@import "@faststore/ui/src/components/molecules/Carousel/styles.scss";
 
 // ----------------------------------------------------------
 // GLOBAL TOKENS
@@ -51,7 +52,14 @@
   }
 
   // CONTAINER
-  --fs-grid-max-width : 1320px;
+  --fs-grid-max-width: 1320px;
+
+  [data-fs-container] {
+    box-sizing: border-box;
+    width: calc(100% - var(--fs-grid-padding) * 2);
+    max-width: var(--fs-grid-max-width);
+    margin-inline: auto;
+  }
 
   // --------------------------------------------------------
   // Interactive Controls (UI Essentials)
@@ -398,15 +406,15 @@
             border-radius: var(--fs-border-radius-pill);
             cursor: pointer;
           }
-          
+
           [data-fs-review-add] {
             background-color: var(--fs-color-main-2);
             color: var(--fs-color-neutral-0);
-            
+
             &:hover {
               background-color: var(--fs-color-main-3);
             }
-            
+
             &:active {
               background-color: var(--fs-color-main-4);
             }
@@ -415,11 +423,11 @@
           [data-fs-review-cancel] {
             background-color: var(--fs-color-neutral-1);
             color: var(--fs-color-neutral-4);
-            
+
             &:hover {
               background-color: var(--fs-color-neutral-2);
             }
-            
+
             &:active {
               background-color: var(--fs-color-neutral-3);
             }
@@ -1023,4 +1031,26 @@
   .section-banner+.section-newsletter {
     background-color: var(--fs-color-neutral-bkg);
   }
+}
+  .section-banner + .section-newsletter {
+    background-color: var(--fs-color-neutral-bkg);
+  }
+}
+
+/* Swiper Carousel */
+.swiper {
+  --swiper-navigation-color: var(--fs-color-main-2);
+  --swiper-navigation-size: 22px;
+}
+
+.swiper-pagination-bullet {
+  width: 50px !important;
+  height: 3px !important;
+  border-radius: 2px !important;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--fs-color-main-2);
 }
