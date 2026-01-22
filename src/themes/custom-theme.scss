@@ -7,9 +7,9 @@
   // --------------------------------------------------------
   // Colors (Branding Core)
   // --------------------------------------------------------
-  --fs-color-main-2                                     : #0366dd;
-  --fs-color-main-3                                     : #0155b7;
-  --fs-color-main-4                                     : #014592;
+  --fs-color-main-2                                     : #FFDE00;
+  --fs-color-main-3                                     : ##E6C800;
+  --fs-color-main-4                                     : #CCB300;
 
   --fs-color-success-bkg                                : #e9fce3;
   --fs-color-warning-bkg                                : #e9fce3;
@@ -115,6 +115,8 @@
     }
 
     [data-fs-navbar-header] {
+      background-color: var(--fs-color-main-2);
+
       [data-fs-button-wrapper], [data-fs-button-icon] {
         color: var(--fs-color-text-display);
       }
@@ -174,6 +176,45 @@
     ////////////////////
     // HOMEPAGE
     ////////////////////
+
+    [data-fs-navbar-logo] {
+      text-decoration: none;
+
+      [data-fs-logo] {
+        &::after {
+          content: 'EAU Flag';
+          color: transparent;
+          display: inline-block;
+          width: var(--fs-spacing-5);
+          height: var(--fs-spacing-3);
+          margin-top: var(--fs-spacing-0);
+          margin-left: var(--fs-spacing-5);
+          margin-right: var(--fs-spacing-5);
+          background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/330px-Flag_of_the_United_Arab_Emirates.svg.png');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+    }
+
+    [data-fs-button-signin-link] {
+      text-decoration: none;
+    
+      &::before {
+        content: 'English';
+        display: inline-block;
+        width: var(--fs-spacing-5);
+        height: var(--fs-spacing-3);
+        margin-top: var(--fs-spacing-3);
+        margin-left: var(--fs-spacing-4);
+        margin-right: var(--fs-spacing-4);
+        color: var(--fs-color-text);
+        font-size: var(--fs-text-size-2);
+        pointer-events: none;
+      }
+    }
+
 
     [data-fs-hero] {
       @include layout-content;
