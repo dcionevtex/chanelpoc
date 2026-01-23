@@ -6,9 +6,10 @@ export interface ProductSpecificationsProps {
 
 interface ProductData {
     additionalProperty: {
-        propertyId: string;
+        propertyID: string;
         name: string;
-        value: string;
+        value: any;
+        valueReference: any;
     }[];
 }
 
@@ -25,7 +26,7 @@ export default function ProductSpecifications({ text }: ProductSpecificationsPro
     const lowerHalf = prodProps.slice(middleProps);
 
     return (
-        <section data-fs-product-specifications className="section" >
+        <section data-fs-product-specifications className="section">
             <h2
                 className="text__title-section layout__content"
                 data-fs-product-specifications-title
@@ -37,7 +38,7 @@ export default function ProductSpecifications({ text }: ProductSpecificationsPro
                 <div data-fs-product-specifications-column>
                     {upperHalf.map((prop, index) => (
                         <div
-                            key={prop.propertyId}
+                            key={prop.propertyID}
                             data-fs-product-specifications-row
                             data-even={index % 2 === 0}
                         >
@@ -50,7 +51,7 @@ export default function ProductSpecifications({ text }: ProductSpecificationsPro
                 <div data-fs-product-specifications-column>
                     {lowerHalf.map((prop, index) => (
                         <div
-                            key={prop.propertyId}
+                            key={prop.propertyID}
                             data-fs-product-specifications-row
                             data-even={index % 2 === 0}
                         >
