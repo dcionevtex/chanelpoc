@@ -1,0 +1,9 @@
+type Query {
+    getReviewAndRatings(product_id: String!): ReviewsAndRatings
+}
+
+type ReviewsAndRatings {
+    rating: Number
+    reviewDateTime: String
+    reviewerName: String
+}
