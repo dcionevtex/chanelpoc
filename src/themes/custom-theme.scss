@@ -1,3 +1,5 @@
+@import "@faststore/ui/src/components/molecules/Rating/styles.scss";
+
 // ----------------------------------------------------------
 // GLOBAL TOKENS
 // Custom Theme
@@ -120,7 +122,170 @@
       --fs-qty-selector-border-radius: var(--fs-border-radius-pill);
     }
 
+    &[data-fs-product-reviews] {
+      max-width: var(--fs-grid-max-width);
 
+      margin-top: var(--fs-spacing-6);
+      margin-bottom: var(--fs-spacing-6);
+
+      margin-left: auto;
+      margin-right: auto;
+
+
+      [data-fs-product-reviews-title] {
+        margin-bottom: var(--fs-spacing-4);
+      }
+
+      [data-fs-product-reviews-content] {
+        display: flex;
+        flex-direction: row;
+        gap: var(--fs-spacing-10);
+
+        [data-fs-ratings-wrapper] {
+          flex: 1;
+        }
+
+        [data-fs-reviews-wrapper] {
+          flex: 2;
+        }
+      }
+    }
+
+    /* -------------------- Ratings -------------------- */
+
+    [data-fs-ratings] {
+      display: flex;
+      flex-direction: column;
+      gap: var(--fs-spacing-3);
+
+      [data-fs-ratings-average] {
+        font-size: var(--fs-text-size-4);
+        font-weight: var(--fs-text-weight-bold);
+      }
+
+      [data-fs-ratings-breakdown] {
+        display: flex;
+        flex-direction: column;
+        gap: var(--fs-spacing-2);
+
+        [data-fs-ratings-row] {
+          display: flex;
+          align-items: center;
+          gap: var(--fs-spacing-2);
+
+          [data-fs-ratings-star-icon] {
+            width: 16px;
+            color: var(--fs-color-main-2);
+            fill: var(--fs-color-main-2)
+          }
+
+          [data-fs-ratings-bar] {
+            flex: 1;
+            height: var(--fs-spacing-1);
+            background-color: var(--fs-color-neutral-2);
+            border-radius: var(--fs-border-radius);
+            overflow: hidden;
+
+            [data-fs-ratings-bar-fill] {
+              height: 100%;
+              background-color: var(--fs-color-main-2);
+              border-radius: var(--fs-border-radius);
+            }
+          }
+
+          [data-fs-ratings-percentage] {
+            width: 48px;
+            text-align: right;
+          }
+        }
+      }
+    }
+
+    /* -------------------- Reviews -------------------- */
+
+    [data-fs-reviews] {
+      display: flex;
+      flex-direction: column;
+      gap: var(--fs-spacing-1);
+
+      [data-fs-reviews-title] {
+        font-weight: var(--fs-text-weight-bold);
+        font-size: var(--fs-text-size-4);
+        margin-bottom: var(--fs-spacing-4);
+      }
+
+      [data-fs-reviews-list] {
+        display: flex;
+        flex-direction: column;
+        gap: var(--fs-spacing-6);
+        
+
+        [data-fs-review-item] {
+          display: flex;
+          flex-direction: column;
+          gap: var(--fs-spacing-2);
+          padding-bottom: var(--fs-spacing-4);
+          border-bottom: 1px solid var(--fs-color-neutral-2);
+
+          [data-fs-review-header] {
+            display: flex;
+            align-items: center;
+            gap: var(--fs-spacing-3);
+
+            [data-fs-review-avatar] {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background-color: var(--fs-color-neutral-3);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-weight: var(--fs-text-weight-bold);
+            }
+
+            [data-fs-review-userinfo] {
+              display: flex;
+              flex-direction: column;
+
+              [data-fs-review-username] {
+                font-weight: var(--fs-text-weight-bold);
+              }
+
+              [data-fs-review-date] {
+                font-size: var(--fs-text-size-0);
+                color: var(--fs-color-neutral-5);
+              }
+            }
+          }
+
+          [data-fs-review-stars] {
+            display: flex;
+            gap: var(--fs-spacing-1);
+
+            [data-fs-review-star-filled],
+            [data-fs-review-star-outline] {
+              width: 16px;
+            }
+
+            [data-fs-review-star-filled] {
+              color: var(--fs-color-main-2);
+              fill: var(--fs-color-main-2);
+            }
+
+            [data-fs-review-star-outline] {
+              fill: transparent;
+              color: var(--fs-color-neutral-4);
+            }
+          }
+
+          [data-fs-review-comment] {
+            font-size: var(--fs-text-size-1);
+            line-height: 1.5;
+            margin: 0;
+          }
+        }
+      }
+    }
 
     [data-fs-navbar-links] {
       background-color: transparent;
