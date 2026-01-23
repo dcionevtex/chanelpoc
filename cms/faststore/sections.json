@@ -427,5 +427,21 @@
                 }
             }
         }
+    },
+    {
+        "name": "ProductSpecifications",
+        "requiredScopes": [],
+        "schema": {
+            "title": "Product Specifications",
+            "type": "object",
+            "description": "Product description list",
+            "properties": {
+                "text": {
+                    "title": "Title",
+                    "type": "string",
+                    "default": "Product Specifications"
+                }
+            }
+        }
     }
 ]

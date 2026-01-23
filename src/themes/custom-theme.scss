@@ -8,7 +8,7 @@
   // Colors (Branding Core)
   // --------------------------------------------------------
   --fs-color-main-2: #FFDE00;
-  --fs-color-main-3: ##E6C800;
+  --fs-color-main-3: #E6C800;
   --fs-color-main-4: #CCB300;
 
   --fs-color-success-bkg: #e9fce3;
@@ -120,7 +120,57 @@
       --fs-qty-selector-border-radius: var(--fs-border-radius-pill);
     }
 
+    // PRODUCT SPECIFICATIONS
+    &[data-fs-product-specifications] {
+      margin-top: var(--fs-spacing-4);
+      margin-bottom: var(--fs-spacing-4);
+      max-width: var(--fs-grid-max-width);
+      margin-right: auto;
+      margin-left: auto;
 
+      [data-fs-product-specifications-title] {
+        margin-bottom: var(--fs-spacing-3);
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      [data-fs-product-specifications-content] {
+        display: flex;
+        width: 100%;
+        gap: var(--fs-spacing-3);
+        opacity: 0.75;
+      }
+
+      [data-fs-product-specifications-column] {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      [data-fs-product-specifications-row] {
+        display: flex;
+        flex-direction: row;
+        gap: var(--fs-spacing-6);
+        padding: var(--fs-spacing-2);
+        font-size: var(--fs-text-size-1);
+
+        &[data-even="true"] {
+          background-color: var(--fs-color-neutral-2);
+        }
+
+        &[data-even="false"] {
+          background-color: var(--fs-color-neutral-1);
+        }
+      }
+
+      [data-fs-product-specifications-label] {
+        color: var(--fs-color-neutral-5);
+      }
+
+      [data-fs-product-specifications-value] {
+        color: var(--fs-color-neutral-7);
+      }
+    }
 
     [data-fs-navbar-links] {
       background-color: transparent;
