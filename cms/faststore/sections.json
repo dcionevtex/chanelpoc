@@ -443,5 +443,21 @@
                 }
             }
         }
+    },
+    {
+        "name": "ProductReviews",
+        "requiredScopes": [],
+        "schema": {
+            "title": "Product Reviews",
+            "type": "object",
+            "description": "Product reviews and ratings",
+            "properties": {
+                "text": {
+                    "title": "Title",
+                    "type": "string",
+                    "default": "Product Reviews"
+                }
+            }
+        }
     }
 ]
