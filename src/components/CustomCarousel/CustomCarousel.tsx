@@ -14,6 +14,10 @@ export interface Slide {
   title: string;
 }
 
+export interface SideBanner {
+  image: string;
+}
+
 interface PaginationItem {
   clickable: boolean;
   renderBullet: (index: number, className: string) => React.ReactNode;
@@ -27,7 +31,7 @@ export interface Configuration {
 
 interface CustomCarouselProps {
   slides?: Slide[];
-  sideBanner?: string;
+  sideBanner?: SideBanner;
   configuration: Configuration;
 }
 
@@ -44,12 +48,12 @@ export default function CustomCarousel({
   return (
     <Container
       className={classNames(styles.customCarousel, {
-        [styles.hasSideBanner]: !!sideBanner,
+        [styles.hasSideBanner]: !!sideBanner?.image,
       })}
     >
-      {sideBanner && (
+      {sideBanner?.image && (
         <div className={styles.sideBanner}>
-          <img src={sideBanner} alt="Banner lateral" loading="lazy" />
+          <img src={sideBanner.image} alt="Banner lateral" loading="lazy" />
         </div>
       )}
 

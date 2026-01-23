@@ -1,23 +1,27 @@
 import { CustomCarousel } from "../CustomCarousel";
-import { Configuration, Slide } from "../CustomCarousel/CustomCarousel";
+import {
+  Configuration,
+  SideBanner,
+  Slide,
+} from "../CustomCarousel/CustomCarousel";
 
 interface CarouselProps {
   slides?: Slide[];
-  sideBanner?: string;
+  banner?: SideBanner;
   configuration: Configuration;
   className?: string;
 }
 
 export default function Carousel({
   slides,
-  sideBanner,
+  banner,
   configuration,
 }: CarouselProps) {
   return (
     <CustomCarousel
       configuration={configuration}
       slides={slides}
-      sideBanner={sideBanner}
+      sideBanner={banner}
     />
   );
 }
