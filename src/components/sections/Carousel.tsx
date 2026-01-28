@@ -1,9 +1,5 @@
-import { CustomCarousel } from "../CustomCarousel";
-import {
-  Configuration,
-  SideBanner,
-  Slide,
-} from "../CustomCarousel/CustomCarousel";
+import CustomCarousel from "../organisms/CustomCarousel";
+import { Configuration, SideBanner, Slide } from "../organisms/CustomCarousel";
 
 interface CarouselProps {
   slides?: Slide[];
@@ -18,10 +14,12 @@ export default function Carousel({
   configuration,
 }: CarouselProps) {
   return (
-    <CustomCarousel
-      configuration={configuration}
-      slides={slides}
-      sideBanner={banner}
-    />
+    <section className="section">
+      <CustomCarousel
+        configuration={configuration}
+        slides={slides}
+        sideBanner={banner}
+      />
+    </section>
   );
 }

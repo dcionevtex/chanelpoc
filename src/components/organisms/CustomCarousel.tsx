@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
-import { Container } from "../Container";
+import Container from "./Container";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 
@@ -47,12 +47,12 @@ export default function CustomCarousel({
 
   return (
     <Container
-      className={classNames(styles.customCarousel, {
-        [styles.hasSideBanner]: !!sideBanner?.image,
-      })}
+      data-fs-custom-carousel
+      data-fs-custom-carousel-has-side-banner={!!sideBanner?.image}
+      as="section"
     >
       {sideBanner?.image && (
-        <div className={styles.sideBanner}>
+        <div data-fs-custom-carousel-side-banner>
           <img src={sideBanner.image} alt="Banner lateral" loading="lazy" />
         </div>
       )}
@@ -70,7 +70,6 @@ export default function CustomCarousel({
         {slides?.map((s, i) => (
           <SwiperSlide
             key={i}
-            // keep slide full-width but avoid forcing height so the parent container controls vertical size
             style={{
               width: "100%",
               display: "flex",
@@ -82,7 +81,6 @@ export default function CustomCarousel({
               src={s.image}
               alt={s.title}
               loading="lazy"
-              // do not force height — let the container decide. Use max constraints so the image scales.
               style={{
                 width: "100%",
                 height: "auto",
