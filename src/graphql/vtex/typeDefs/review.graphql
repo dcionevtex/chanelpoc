@@ -1,0 +1,19 @@
+type Mutation {
+  postReview(input: PostReviewInput): Review
+}
+
+input PostReviewInput {
+  productId: String
+  rating: Int
+  title: String
+  text: String
+  reviewerName: String
+}
+
+type Review {
+  productId: String
+  rating: Int
+  title: String
+  text: String
+  reviewerName: String
+}

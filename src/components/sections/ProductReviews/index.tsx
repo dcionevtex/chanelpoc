@@ -1,8 +1,9 @@
-import { Reviews } from "../../organisms/Reviews";
-import Ratings from "../../organisms/Ratings";
-// import { useQuery_unstable as useQuery } from "@faststore/core/src/experimental";
-// import { GET_REVIEWS_AND_RATINGS } from "./graphql/queries";
+import { useState } from "react";
 import { usePDP } from "@faststore/core";
+
+import Ratings from "../../organisms/Ratings";
+import { Reviews } from "../../organisms/Reviews";
+import { useProductReviews } from "../../../hooks/useProductReviews";
 
 export interface ProductReviewsProps {
     text: string;
@@ -19,31 +20,36 @@ const PROPS = {
 };
 
 export default function ProductReviews({ text }: ProductReviewsProps) {
-    const context = usePDP();
+    const { data } = usePDP();
+    const productId = data?.product?.id;
 
-    // const [getReviewsAndRatings, { data }] = useQuery(GET_REVIEWS_AND_RATINGS, {
-    //     product_id: context.data.product_id,
-    // });
+    const [reviewing, setReviewing] = useState(false);
+
+    const { data: reviews, isValidating } = useProductReviews(productId);
 
     return (
         <section data-fs-product-reviews className="section">
-            <h2
-                onClick={() => {
-                    // console.log("fab", data);
-                }}
-                data-fs-product-reviews-title
-                className="text__title-section layout__content"
-            >
+            <h2 data-fs-product-reviews-title className="text__title-section layout__content">
                 {text}
             </h2>
 
             <div data-fs-product-reviews-content>
                 <div data-fs-ratings-wrapper>
-                    <Ratings ratings={PROPS.ratings} />
+                    <Ratings
+                        reviewing={reviewing}
+                        ratings={PROPS.ratings}
+                        setReviewing={setReviewing}
+                    />
                 </div>
 
                 <div data-fs-reviews-wrapper>
-                    <Reviews />
+                    <Reviews
+                        reviews={reviews ?? []}
+                        reviewing={reviewing}
+                        // loading={isValidating}
+                        setReviewing={setReviewing}
+                        productId={productId}
+                    />
                 </div>
             </div>
         </section>
