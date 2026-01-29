@@ -9,7 +9,30 @@ interface ReviewProps {
     productId?: string;
 }
 
-export function Reviews({ reviews = [], reviewing, setReviewing, productId }: ReviewProps) {
+    //TODO: remove once its implemented
+const MOCK_REVIEWS = [
+  {
+    id: 1,
+    user: "Lorem ipsum",
+    date: "12 Jan 2026",
+    rating: 5,
+    comment:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    id: 2,
+    user: "Ut enim ad minim",
+    date: "08 Jan 2026",
+    rating: 4,
+    comment:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  },
+];
+
+export function Reviews({ reviews, reviewing, setReviewing, productId }: ReviewProps) {
+    //TODO: remove once its implemented
+    reviews = MOCK_REVIEWS
+
     const [form, setForm] = useState({
         rating: 5,
         title: "",
@@ -21,7 +44,7 @@ export function Reviews({ reviews = [], reviewing, setReviewing, productId }: Re
         rating: form.rating,
         title: form.title,
         text: form.text,
-        reviewerName: "Fab",
+        reviewerName: "Mock",
     });
 
     const handleChange =
@@ -47,13 +70,12 @@ export function Reviews({ reviews = [], reviewing, setReviewing, productId }: Re
                 rating: form.rating,
                 title: form.title,
                 text: form.text,
-                reviewerName: "Fab",
+                reviewerName: "Mock",
             });
 
-            console.log("fab", res);
             setReviewing(false);
         } catch (err) {
-            console.error("fab", err);
+            console.error(err);
         }
     };
 
@@ -61,8 +83,8 @@ export function Reviews({ reviews = [], reviewing, setReviewing, productId }: Re
         <div data-fs-reviews>
             <p data-fs-reviews-title>Reviews</p>
 
-            <div data-fs-reviews-list>
-                {reviews?.slice(0, reviewing ? 0 : 1).map((review) => (
+            <div data-fs-reviews-list>  
+                {reviews?.slice(0, reviewing ? 1 : 2).map((review) => (
                     <div key={review.id} data-fs-review-item>
                         <div data-fs-review-header>
                             <div data-fs-review-avatar>{review.user.charAt(0)}</div>

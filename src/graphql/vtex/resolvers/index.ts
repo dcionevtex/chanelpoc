@@ -1,8 +1,12 @@
 import ReviewsResolver from "./reviews";
 import ReviewAndRatingsResolver from "./reviews-and-ratings";
+import SpecificationsResolver from "./specifications";
 
 const resolvers = {
-    Query: { ...ReviewAndRatingsResolver },
+    Query: {
+        ...ReviewAndRatingsResolver,
+        ...SpecificationsResolver,
+    },
     Mutation: { ...ReviewsResolver },
 };
 

@@ -10,27 +10,23 @@ export interface PostReviewPayload {
 
 const ReviewsResolver = {
     postReview: async (_: unknown, data: { input: PostReviewPayload }) => {
-        console.log(data)
-         if (!data.input) return null
+        if (!data.input) return null;
 
         const url = `${BASE_URL}/reviews-and-ratings/api/review`;
 
-        try {
-            const response = await fetch(url, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    ...data.input,
-                    reviewerName: data.input.reviewerName || "Anonymous",
-                    approved: true,
-                }),
-            });
+        const response = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                ...data.input,
+                reviewerName: data.input.reviewerName || "Anonymous",
+                approved: true,
+            }),
+        });
 
-            if (!response.ok) return null;
-            return response.json();
-        } catch (err) {
-            console.log(err);
-        }
+        if (!response.ok) return null;
+
+        return response.json();
     },
 };
 

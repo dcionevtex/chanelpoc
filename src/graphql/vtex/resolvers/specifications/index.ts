@@ -1,17 +1,18 @@
 import { BASE_URL } from "../../../../constants";
 
-const ReviewAndRatingsResolver = {
-    getReviewAndRatings: async (_: unknown, { productId }: { productId: string }) => {
+const SpecificationsResolver = {
+    getSpecifications: async (_: unknown, { productId }: { productId: string }) => {
         if (!productId) return null;
 
-        const url = `${BASE_URL}/reviews-and-ratings/api/reviews?product_id=${productId}`;
+        const url = `${BASE_URL}/api/catalog_system/pvt/products/${productId}/specification`;
 
         try {
             const response = await fetch(url);
+
             if (!response.ok) return null;
 
             const data = await response.json();
-            
+
             return data;
         } catch (err) {
             console.error(err);
@@ -20,4 +21,4 @@ const ReviewAndRatingsResolver = {
     },
 };
 
-export default ReviewAndRatingsResolver;
+export default SpecificationsResolver;
