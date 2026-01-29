@@ -1,0 +1,9 @@
+type Query {
+    getSpecifications(productId: String!): [Specification]
+}
+
+type Specification {
+    Id: Int
+    Value: [String]
+    Name: String
+}

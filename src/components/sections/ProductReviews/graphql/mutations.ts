@@ -4,7 +4,7 @@ import { gql } from "@faststore/core/api";
 
 // @ts-ignore
 export const POST_REVIEW = gql(`
-  mutation postReview($input: PostReviewInput!) {
+  mutation PostReview($input: PostReviewInput!) {
     postReview(input: $input) {
       productId
       rating

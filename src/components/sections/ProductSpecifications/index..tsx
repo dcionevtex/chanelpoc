@@ -1,10 +1,12 @@
 import { usePDP } from "@faststore/core";
+import { useProductSpecifications } from "../../../hooks/useSpecifications";
 
 export interface ProductSpecificationsProps {
     text: string;
 }
 
 interface ProductData {
+    id: string;
     additionalProperty: {
         propertyID: string;
         name: string;
@@ -13,13 +15,35 @@ interface ProductData {
     }[];
 }
 
+export interface Specification {
+    Id: number;
+    Value: string[];
+    Name: string;
+}
+
 export default function ProductSpecifications({ text }: ProductSpecificationsProps) {
     const context = usePDP();
     const product: ProductData | undefined = context?.data?.product;
 
     if (!product) return null;
 
-    const prodProps = product.additionalProperty;
+    const { data, error, isLoading } = useProductSpecifications(product?.id);
+    const productSpecs: Specification[] = data?.length ? data : [];
+
+    if (isLoading) return <p>loading</p>;
+    if (error) return <p>{error}</p>;
+
+    const prodProps = [
+        ...product.additionalProperty,
+        ...productSpecs?.map((item) => {
+            return {
+                propertyID: item.Id,
+                name: item.Name,
+                value: item.Value[0] || item.Value,
+                valueReference: 0,
+            };
+        }),
+    ];
 
     const middleProps = Math.ceil(prodProps.length / 2);
     const upperHalf = prodProps.slice(0, middleProps);

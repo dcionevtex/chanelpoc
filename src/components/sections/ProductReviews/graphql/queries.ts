@@ -4,7 +4,7 @@ import { gql } from "@faststore/core/api";
 
 // @ts-ignore
 export const GET_REVIEWS_AND_RATINGS = gql(`
-  query getReviewAndRatings($productId: String!) {
+  query GetReviewAndRatings($productId: String!) {
     getReviewAndRatings(productId: $productId) {
       rating
       reviewDateTime
