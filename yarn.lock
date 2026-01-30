@@ -1262,9 +1262,9 @@
     tsx "^4.6.2"
 
 "@faststore/graphql-utils@^3.95.0":
-  version "3.95.0"
-  resolved "https://registry.yarnpkg.com/@faststore/graphql-utils/-/graphql-utils-3.95.0.tgz#a301cb834fc25f939ee54925fc058abb16bff3ec"
-  integrity sha512-hXwC5QRkpErBFRKRkdsQAqc4H/i3nmg9xiDNRSdkYhcD0xu9/dUZnPjYixTxr3msXt4ni1qsJI18UFkBhDazBQ==
+  version "3.96.0"
+  resolved "https://registry.yarnpkg.com/@faststore/graphql-utils/-/graphql-utils-3.96.0.tgz#ddb390aa1e42e8e13ae8cc324570ce262f99b043"
+  integrity sha512-A7qo2oX0UwBM/jWve3c5nRzlHQaew7RHuTnHxz8BG8hykkuH9JyCWJtrQ+Lwd7QR1SLaVIBmbeYrYxz+BYQDKw==
 
 "@faststore/lighthouse@3.95.0":
   version "3.95.0"
@@ -3622,6 +3622,11 @@ ci-info@^3.2.0:
   version "3.7.1"
   resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-3.7.1.tgz#708a6cdae38915d597afdf3b145f2f8e1ff55f3f"
   integrity sha512-4jYS4MOAaCIStSRwiuxc4B8MYhIe676yO1sYGzARnjXkWpmzZMMYxY6zu8WYWDhSuth5zhrQ1rhNSibyyvv4/w==
+
+classnames@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.5.1.tgz#ba774c614be0f016da105c858e7159eae8e7687b"
+  integrity sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==
 
 clean-stack@^2.0.0:
   version "2.2.0"
@@ -8104,6 +8109,11 @@ swap-case@^2.0.2:
   integrity sha512-kc6S2YS/2yXbtkSMunBtKdah4VFETZ8Oh6ONSmSd9bRxhqTrtARUCBUiWXH3xVPpvR7tz2CSnkuXVE42EcGnMw==
   dependencies:
     tslib "^2.0.3"
+
+swiper@^12.0.3:
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-12.1.0.tgz#5e020f3bdbbff6fc9d9be01714d0ad5452050a58"
+  integrity sha512-BD4CpAOOyEvZ2f0CDx362ea+vmOwukVcmbsQx+0BhRIaBUz8wvcCd//E7RFmvBZCrfyqXCHUVqmgUwts6ywlxw==
 
 swr@^2.2.5:
   version "2.3.3"
