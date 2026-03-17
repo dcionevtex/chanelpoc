@@ -8,7 +8,7 @@
     "build": "faststore build",
     "start": "faststore start",
     "cms-sync": "faststore cms-sync",
-    "test": "faststore test"
+    "test": "faststore test2"
   },
   "dependencies": {
     "@faststore/cli": "3.95.0",
