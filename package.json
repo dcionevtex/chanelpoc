@@ -9,7 +9,7 @@
     "start": "faststore start",
     "cms-sync": "faststore cms-sync",
     "test": "faststore test2",
-    "postinstall": "node scripts/restore-missing-search-page.js"
+    "postinstall": "node scripts/restore-missing-search-page.js || exit 0"
   },
   "dependencies": {
     "@faststore/cli": "^4.7.0",
