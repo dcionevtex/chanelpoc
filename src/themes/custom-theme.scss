@@ -1,8 +1,9 @@
-@import "@faststore/ui/src/components/molecules/Rating/styles.scss";
+@use "@faststore/ui/src/styles/base/utilities" as u;
+@use "@faststore/ui/src/components/molecules/Rating/styles.scss" as ratingStyles;
 // @import "@faststore/ui/src/components/atoms/Alert/styles.scss";
-@import "@faststore/ui/src/components/atoms/Loader/styles.scss";
+@use "@faststore/ui/src/components/atoms/Loader/styles.scss" as loaderStyles;
 
-@import "@faststore/ui/src/components/molecules/Carousel/styles.scss";
+@use "@faststore/ui/src/components/molecules/Carousel/styles.scss" as carouselStyles;
 
 // ----------------------------------------------------------
 // GLOBAL TOKENS
@@ -48,7 +49,7 @@
 
   // PADDING
 
-  @include media(">=notebook") {
+  @include u.media(">=notebook") {
     --fs-grid-padding: var(--fs-spacing-6);
   }
 
@@ -135,7 +136,7 @@
 
       input:not(:placeholder-shown) + label,
       &:focus + label {
-        top: rem(9px);
+        top: u.rem(9px);
       }
     }
 
@@ -536,7 +537,7 @@
           padding: var(--fs-spacing-4);
         }
 
-        @include media("<=notebook") {
+        @include u.media("<=notebook") {
           max-width: calc(var(--fs-grid-max-width) - var(--fs-spacing-14));
         }
       }
@@ -679,7 +680,7 @@
         text-decoration: underline;
       }
 
-      @include media("<notebook") {
+      @include u.media("<notebook") {
         display: none;
       }
     }
@@ -715,7 +716,7 @@
         padding: 0 var(--fs-grid-padding);
       }
 
-      @include media(">=notebook") {
+      @include u.media(">=notebook") {
         --fs-incentives-gap: var(--fs-spacing-6);
       }
     }
@@ -797,10 +798,10 @@
     }
 
     [data-fs-hero] {
-      @include layout-content;
+      @include u.layout-content;
 
       &[data-fs-hero-variant="primary"] [data-fs-hero-heading] {
-        @include media(">=notebook") {
+        @include u.media(">=notebook") {
           padding: var(--fs-spacing-13) var(--fs-spacing-5);
         }
       }
@@ -815,7 +816,7 @@
       }
 
       [data-fs-tile] > * {
-        @include media(">=notebook") {
+        @include u.media(">=notebook") {
           grid-auto-rows: 640px auto;
         }
       }
@@ -873,7 +874,7 @@
     [data-fs-image-gallery] > [data-fs-image] {
       object-fit: cover;
 
-      @include media("<notebook") {
+      @include u.media("<notebook") {
         height: 280px;
       }
     }
@@ -941,7 +942,7 @@
     [data-fs-product-listing-content-grid] {
       column-gap: var(--fs-spacing-6);
 
-      @include media(">=notebook") {
+      @include u.media(">=notebook") {
         row-gap: var(--fs-spacing-3);
       }
     }
@@ -976,7 +977,7 @@
       --fs-cart-sidebar-footer-box-shadow: none;
       --fs-slide-over-partial-max-width-notebook: 480px;
 
-      @include media(">=notebook") {
+      @include u.media(">=notebook") {
         --fs-cart-sidebar-list-padding: var(--fs-spacing-3) var(--fs-spacing-7);
         --fs-slide-over-header-padding: var(--fs-spacing-2) var(--fs-spacing-7);
       }
@@ -991,7 +992,7 @@
     }
 
     [data-fs-cart-sidebar-footer] {
-      @include media(">=notebook") {
+      @include u.media(">=notebook") {
         padding: 0 var(--fs-spacing-7) var(--fs-spacing-4);
       }
 
