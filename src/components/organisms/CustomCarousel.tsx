@@ -20,7 +20,7 @@ export interface SideBanner {
 
 interface PaginationItem {
   clickable: boolean;
-  renderBullet: (index: number, className: string) => React.ReactNode;
+  renderBullet: (index: number, className: string) => string;
 }
 
 export interface Configuration {
